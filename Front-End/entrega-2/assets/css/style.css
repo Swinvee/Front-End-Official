@@ -1,0 +1,159 @@
+/* ============================
+   🎨 Design System
+============================ */
+:root {
+  /* Paleta de cores */
+  --color-primary: #005f73;
+  --color-secondary: #0a9396;
+  --color-accent: #94d2bd;
+  --color-neutral-light: #e9d8a6;
+  --color-neutral-dark: #001219;
+  --color-danger: #ae2012;
+  --color-success: #2a9d8f;
+  --color-warning: #ee9b00;
+
+  /* Tipografia */
+  --font-base: 'Segoe UI', sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+
+  /* Espaçamento */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/* ============================
+   🔧 Reset + Base
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-md);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================
+   🧭 Navegação
+============================ */
+header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-2);
+}
+
+nav ul {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   📐 Layout com Grid
+============================ */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+/* ============================
+   📱 Responsividade
+============================ */
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================
+   🧩 Componentes
+============================ */
+section {
+  background-color: white;
+  padding: var(--space-2);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button {
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: var(--space-2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+input, select {
+  width: 100%;
+  padding: var(--space-1);
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: 4px;
+}
+
+/* Estados visuais */
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Badges e tags */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: var(--color-accent);
+  color: var(--color-neutral-dark);
+  border-radius: 12px;
+  font-size: var(--font-size-sm);
+}
+
+/* ============================
+   🧭 Menu Hambúrguer (mobile)
+============================ */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
